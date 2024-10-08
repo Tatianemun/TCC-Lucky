@@ -6,15 +6,20 @@ define a = Character("Ravi")
 define g = Character("Gangue")
 
 # The game starts here.
-
+```
+Capítulo 1
+```
 label start:
     
+    play music "audio/inicio.mp3"
+
     scene flor
     with fade
 
     "Em um vilarejo encantado, Lucky, um pequeno duende, enfrenta dificuldades na escola devido ao bullying de Peter, um duende mais velho e maldoso."
 
-    "No pátio, Lucky estava sozinho quando Peter apareceu, cercado por colegas"    
+    "No pátio, Lucky estava sozinho quando Peter apareceu, cercado por colegas"   
+    stop music 
     scene patio
     show lucky at left
     show peter at center
@@ -95,7 +100,7 @@ label nao:
 label principal:
     scene flor
     show luckytriste at center
-    "Lucky decide voltar para casa e para isso ele usa o caminho mais rápido: a floresta"
+    "Lucky decidiu voltar para casa, e usou a floresta como um atalho"
 
 
     scene casa
@@ -103,9 +108,16 @@ label principal:
     show luckytriste2 at right
 
     "Ao chegar em casa, Lucky se depara com sua mãe"
-    r "Ei, querido, você parece preocupado. O que aconteceu?"
+    r "Ei, querido, você parece preocupado"
+    r "O que aconteceu?"
 
-    p "Peter está sempre me zoando na escola e não suporto mais isso."
+    l "Nada mãe"
+    l "Não precisa ficar preocupada"
+
+    r "Tem certeza?"
+    r "Parece ser algo a mais"
+
+    
 
     hide rose2
     hide luckytriste2
@@ -125,49 +137,49 @@ label bom:
     show rose2 at left 
     show luckytriste2 at right
 
-    l "Peter sempre está me incomodando e eu não fiz nada para ele"
-    l "Hoje estava no pátio na hora do recreio e ele veio junto com os amigos deles me irritar"
-    l "Não aguento mais isso"
+    l "Na verdade, aconteceu uma coisa"
+    l "É o Peter, ele sempre está me zoando"
+    l "Hoje estava no pátio e ele veio me irritar, junto com os amigos dele"
 
-    r "Isso acontece desde quando?"
+    r "Ele sempre faz isso?"
 
+    l "Sim"
     l "Já faz um tempo"
 
-    r "Querido, devia ter me contado desde quando ele te incomodou da primeira vez"
-    r "Saiba que eu vou estar sempre aqui e pode contar comigo"
-    r "Depois vou ir na sua escola conversar com a diretora, tá bom?"
+    r "Filho, devia ter me contado desde quando ele te incomodou da primeira vez"
+    r "É inadmissível esse comportamento do Peter"
+    r "Tenho ir lá na escola falar desse problema"
+    r "Só quero que você saiba que eu vou estar sempre aqui e pode contar comigo"
 
+    hide luckytriste2
+    show lucky2 at right
     l "Tá bom mãe, obrigado"
 
+    r "De nada querido"
     r "Espero que Peter pare de vez de te incomodar"
 
-    l "Também"
+    l "Também espero"
+
+    hide lucky2
     jump alternativo
 
 
 label ruim:
 
     show rose2 at left 
-    show luckytriste2 at right
-    r "Você falou com seus professores?"
+    show lucky_serio at right
 
-    l "Não, mas não vai adiantar"
-    l "Peter não respeita ninguém, aposto que se eu falar com os professores não vai dar em nada"
-    l "Mas deixa isso pra lá"
-    l "Não fique preocupada, uma hora ele para de me irritar"
+    l "Não, não é"
+    l "Fica despreocupada"
 
-    r "Não posso filho"
-    r "Você está sofrendo e Peter tem que parar com essas provocações"
-    r "Você vai falar com seus professores sobre essa situação e se for preciso vou na escola resolver"
-
-    l "Ta bom"
+    hide lucky_serio
     jump alternativo
 
 label alternativo:
     show rose2 at left 
-    show luckytriste2 at right
+    show lucky2 at right
 
-    l "Agora preciso esfriar a cabeça"
+    l "Agora vou relaxar um pouco"
     
     r "Que tal um passeio?"
 
@@ -194,21 +206,20 @@ label alternativo:
 
     l "Oi, sou o Lucky"
 
-    i "O que está fazendo aqui?"
+    i "O que te trouxe até aqui?"
 
-    l "Vim passear e aproveitar para esfriar a cabeça"
+    l "Vim relaxar um pouco"
 
-    l "E você? Por que está na floresta?"
+    l "E você?"
 
     i "Estou cuidando dos animais"
     i "Gosto de cuidar deles, dá uma paz"
-    i "Além de fazer uma boa ação, me divirto fazendo isso"
 
-    l "Que legal, realmente parece divertido"
+    l "Parece divertido"
 
-    i "E é mesmo"
-    i "Que tal me ajudar?"
-    i "Assim podemos ficar conversando e brincar com os animais"
+    i "E realmente é"
+    i "Por que você não me ajuda?"
+    i "Assim podemos aproveitar o tempo e conversar"
     
     hide lily2
     hide lucky2
@@ -225,8 +236,8 @@ menu:
 
 label otimo:
 
-    show lily2
-    show lucky2
+    show lily2 at left
+    show lucky2 at right
 
     l "Claro"
     l "Até acho ótimo para relaxar um pouco"
@@ -238,7 +249,7 @@ label otimo:
     l "Sim e você?"
 
     i "Também"
-    i "Estudo de amanhã, aí aproveitei essa tarde ensolarada para ficar com os animais"
+    i "Estudo de manhã, aí aproveitei essa tarde ensolarada e vim aqui"
 
     l "Que legal! Também estudo de manhã"
 
@@ -251,9 +262,9 @@ label otimo:
 
     l "Tem um garoto que faz bullying comigo"
     l "Ele fica me incomodando junto com os amigos dele"
-    l "Sabe isso me deixa muito triste"
+    l "E isso me deixa muito triste"
 
-    i "Te entendo, nunca sofri bullying mas fico tão indignada quando alguém sofre" 
+    i "Te entendo" 
     i "É horrivel como algumas pessoas se sentem no direito de fazer isso com os outros"
 
     l "Sim, o pior é que eles se sentem bem em ter esse comportamento"
@@ -266,9 +277,9 @@ label otimo:
 
     i "Ah, é sempre bom ter alguém para conversar"
 
-    l "Sim"
+    l "Sim, ajuda a se livrar um pouco desse peso"
 
-    i "Você já falou com o seus professores?"
+    i "Mas você falou com o seus professores?"
     i "Em situações como essa, é sempre bom avisar eles"
 
     l "Sei que é bom, mas não falei"
@@ -290,31 +301,37 @@ label otimo:
 
     l "Será?"
 
-    i "Sim, ele ajuda a desenvolver o autoconhecimento, a autoestima e a comunicação"
+    i "Sim, me ajudou a desenvolver a autoestima e a comunicação"
 
     l "Vou pensar nisso"
     l "Talvez me juntar a um grupo de teatro me faça bem"
 
     i "Com certeza!"
-    i "Desenvolver a autoestima vai fazer você se valorizar e dessa forma os comentários negativos não vão te afetar"
+    i "Com a autoestima você vai se valorizar e os comentários do Peter não vão te afetar"
 
     l "Verdade"
     l "Às vezes, me sinto tão inseguro que acabo acreditando nas coisas ruins que eles falam de mim"
 
     i "Sim, infelizmente isso acontece com muita gente"
     i "Mas saiba que a coragem vem de dentro"
-
-
-
-
-
-    "Lucky ajuda Lily, e durante o trabalho, eles conversam sobre coragem e autoestima. Lily diz que a bondade de Lucky é seu verdadeiro poder. Lucky começa a se sentir mais confiante e reconectado consigo mesmo."
     jump continuacao
 
 label pessimo:
-    "Lucky agradece a oferta, mas decide seguir seu caminho sozinho pela floresta. Ele se sente um pouco perdido, sem saber ao certo o que fazer para lidar com seus problemas. A solidão o deixa mais reflexivo."
+    l "Agradeço a oferta, mas vou seguindo meu caminho sozinho"
+
+    i "Tudo bem"
+
+    "Lucky se sente um pouco perdido e a solidão o deixa mais reflexivo"
     jump continuacao
 
+```
+Capítulo 2
+```
+
+```
+No outro dia, ocorreu a festa anual de outono da escola, uma festa onde são coroados o rei e rainha.
+Lucky estava nervoso para sua primeira festa de outono, e com a ajuda da Lily (ou por conta própria, dependendo da escolha anterior)
+```
 label continuacao:
     scene festa
     show peter2 at left
@@ -327,7 +344,13 @@ label continuacao:
     show peter2 at left
     show luckytriste2 at right
 
-    p "Olha só, o azarado de novo!"
+    p "Olha só, se não é o azarado do Lucky de novo!"
+
+    l "Me deixa em paz!"
+
+    p "Tá levantando a voz pra mim?!"
+    p "O que? Resolveu ser corajoso agora?!"
+
 
     hide peter2
     hide luckytriste2
@@ -340,14 +363,14 @@ menu:
         jump confiante 
 
     "Não":
-        jump humilhei
+        jump silencio
 
 label confiante:
     show lucky at center
     "Lucky se levanta com confiança e responde que ele não é azarado, mas sim um duende bondoso e corajoso. Os outros duendes começam a admirar sua atitude, e Peter percebe que suas provocações não estão funcionando mais"
     jump finalfeliz
 
-label humilhei:
+label silencio:
     "Lucky permanece em silêncio, mas Lily e Ravi, que estão com ele, o defendem. Peter se surpreende com a solidariedade dos amigos de Lucky e começa a perceber que está isolado em suas provocações"
     jump finaltriste
 
