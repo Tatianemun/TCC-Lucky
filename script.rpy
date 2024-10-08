@@ -29,7 +29,7 @@ label start:
     p "Olha só quem está aqui, o azarado do Lucky!"
     
     hide lucky
-    show lucky_tenso at left
+    show lucky_tenso2 at left
 
     p "E aí parceiro, tá querendo problemas?"
 
@@ -38,7 +38,7 @@ label start:
     p "Olha só gente"
     p "Nem conseguir completar uma frase ele consegue"
 
-    hide lucky_tenso
+    hide lucky_tenso2
     show luckytriste at left
 
     g "hahahahahahahahahaha"
@@ -58,7 +58,7 @@ menu:
         jump nao
 
 label sim:
-    show lucky_serio2 at left
+    show lucky_serio at left
     show peter at center
     show gangue at right
 
@@ -71,7 +71,7 @@ label sim:
     p "Virou piadista agora?"
     p "Se não quer ser motivo de piada, é melhor sair da minha frente!"
 
-    hide lucky_serio2
+    hide lucky_serio
     hide peter_rindo
     hide gangue
 
@@ -80,14 +80,14 @@ label sim:
     jump principal
 
 label nao:
-    show lucky_tenso2 at left
+    show lucky_tenso at left
     show peter at center
     show gangue at right
 
     p "Ih, olha lá!"
     p "O covarde decidiu fugir"
 
-    hide lucky_tenso2
+    hide lucky_tenso
     hide peter
 
     show peter_rindo2 at left
@@ -167,12 +167,12 @@ label bom:
 label ruim:
 
     show rose2 at left 
-    show lucky_serio at right
+    show lucky_serio2 at right
 
     l "Não, não é"
     l "Fica despreocupada"
 
-    hide lucky_serio
+    hide lucky_serio2
     jump alternativo
 
 label alternativo:
@@ -277,19 +277,18 @@ label otimo:
 
     i "Ah, é sempre bom ter alguém para conversar"
 
-    l "Sim, ajuda a se livrar um pouco desse peso"
+    l "Pois é, ajuda a se livrar um pouco desse peso"
 
     i "Mas você falou com o seus professores?"
-    i "Em situações como essa, é sempre bom avisar eles"
+    i "É sempre bom avisar eles"
 
     l "Sei que é bom, mas não falei"
     l "Tenho medo de falar e piorar as coisas"
-    l "E se eles começarem a me zoar ainda mais?!"
+    l "E se eles começarem a me zoar ainda mais?! E se começarem a me bater?!"
     
     i "Sei que você tem motivo para ter medo, mas se você não contar, pode ser pior"
 
-    l "Verdade"
-    l "Só fico pensando que se eu falar, vão me achar fraco"
+    l "Sei que você está certa, mas fico pensando que se eu falar, vão me achar fraco"
 
     i "Não, Lucky!"
     i "Pedir ajuda não é sinal de fraqueza, é de coragem"
@@ -299,27 +298,39 @@ label otimo:
 
     i "Te entendo, tive esse problema e o que me ajudou foi o teatro, acho que pode te ajudar também"
 
-    l "Será?"
+    l "Teatro?"
 
-    i "Sim, me ajudou a desenvolver a autoestima e a comunicação"
+    i "Sim, ele me ajudou a desenvolver a autoestima e a comunicação"
 
-    l "Vou pensar nisso"
-    l "Talvez me juntar a um grupo de teatro me faça bem"
+    l "Ah, então vou pensar nisso, talvez me juntar a um grupo de teatro me faça bem"
 
     i "Com certeza!"
-    i "Com a autoestima você vai se valorizar e os comentários do Peter não vão te afetar"
+    i "Com a autoestima, os comentários do Peter não vão te afetar"
 
     l "Verdade"
-    l "Às vezes, me sinto tão inseguro que acabo acreditando nas coisas ruins que eles falam de mim"
+    l "Às vezes, me sinto tão inseguro que acabo acreditando nas coisas ruins que ele fala de mim"
 
-    i "Sim, infelizmente isso acontece com muita gente"
+    i "Eu sei, mas você sabe que não é"
     i "Mas saiba que a coragem vem de dentro"
+
+    hide lily2
+    hide lucky2
     jump continuacao
 
 label pessimo:
+
+    show lily2 at left
+    show lucky2 at right
+
     l "Agradeço a oferta, mas vou seguindo meu caminho sozinho"
 
-    i "Tudo bem"
+    i "Tudo bem, então nos vemos por aí"
+    i "Tchau"
+
+    l "Tchau"
+
+    hide lily2
+    hide lucky2
 
     "Lucky se sente um pouco perdido e a solidão o deixa mais reflexivo"
     jump continuacao
